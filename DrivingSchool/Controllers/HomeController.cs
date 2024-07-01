@@ -7,6 +7,7 @@ namespace DrivingSchool.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AppointmentDbContext _appointmentDbContext;
 
         public HomeController(ILogger<HomeController> logger)
         {
