@@ -7,11 +7,12 @@ namespace DrivingSchool.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly AppointmentDbContext _appointmentDbContext;
+        private readonly SchoolDbContext _schoolDbContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, SchoolDbContext schoolDb)
         {
             _logger = logger;
+            _schoolDbContext = schoolDb;
         }
 
         public IActionResult Index()
