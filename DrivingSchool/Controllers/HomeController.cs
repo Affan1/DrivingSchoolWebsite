@@ -14,10 +14,26 @@ namespace DrivingSchool.Controllers
             _logger = logger;
             _schoolDbContext = schoolDb;
         }
-
+        
         public IActionResult Index()
         {
+
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(Appointments appointments)
+        {
+            if (ModelState.IsValid)
+            {
+                _schoolDbContext.Appointment.Add(appointments);
+                _schoolDbContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else {
+                return View();
+            }
+               
         }
 
         public IActionResult Privacy()

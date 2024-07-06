@@ -35,6 +35,10 @@
 
     <!-- Template Stylesheet -->
     <link href="~/css/style.css" rel="stylesheet">
+
+    <!-- include css and js Time picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
     <header>
@@ -189,8 +193,14 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
+
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    @section scripts {
+        <script src="lib/jquery/dist/jquery.js"></script>
+        <script src="lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    }
 </body>
 </html>

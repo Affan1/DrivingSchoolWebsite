@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Appointments
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -219,36 +220,43 @@
                 <div class="col-lg-8 my-6 mb-0 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-primary text-center p-5">
                         <h1 class="mb-4">Make Appointment</h1>
-                        <form>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <form method="post">
                             <div class="row g-3">
                                 <div class="col-sm-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name">
-                                        <label for="gname">Your Name</label>
+                                        <input asp-for="FullName" type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name">
+                                        <label asp-for="FullName">Your Name</label>
+                                        <span asp-validation-for="FullName" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control border-0" id="gmail" placeholder="Gurdian Email">
-                                        <label for="gmail">Your Email</label>
+                                        <input asp-for="Email" type="email" class="form-control border-0" id="gmail" placeholder="Gurdian Email">
+                                        <label asp-for="Email">Your Email</label>
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                <div class="form-floating" id="flatpickrcontainer">
+                                        @* <input asp-for="DateTime"type="datetime-local" class="form-control border-0" id="cname" placeholder="Child Name"> *@                                    
+                                        <input asp-for="DateTime" type="text" class="form-control border-0" id="cname" placeholder="Select Date.." data-input>
+                                        <label asp-for="DateTime">DateTime</label>
+                                        <span asp-validation-for="DateTime" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="cname" placeholder="Child Name">
-                                        <label for="cname">Courses Type</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="cage" placeholder="Child Age">
-                                        <label for="cage">Car Type</label>
+                                        <input asp-for="PhoneNumber"type="text" class="form-control border-0" id="cage" placeholder="Child Age">
+                                        <label asp-for="PhoneNumber">Phone Number</label>
+                                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Message</label>
+                                        <textarea asp-for="Description" class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                        <label asp-for="Description">Message</label>
+                                        <span asp-validation-for="Description" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -453,4 +461,26 @@
         </div>
     </div>
     <!-- Testimonial End -->
+<script>
 
+    // js initialization
+
+    flatpickr.l10ns.default.firstDayOfWeek = 1; // Monday default is sunday
+
+    document.getElementById("flatpickrcontainer").flatpickr({
+        wrap: true,
+        weekNumbers: true,
+        enableTime: true, // enables timepicker default is false
+        time_24hr: true, // set to false for AM PM default is false
+        onChange: function (selectedDates, dateStr, instance) {
+            console.log("changed");
+        }
+    });
+</script>
+@section scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+      
