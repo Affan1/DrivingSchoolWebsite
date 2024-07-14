@@ -3,6 +3,7 @@
 *@
 @{
 }
+@model Questions
 <!-- Contact Start -->
 <div class="container-xxl py-6">
     <div class="container">
@@ -19,30 +20,41 @@
                 <h6 class="text-primary text-uppercase mb-2">Contact Us</h6>
                 <h1 class="display-6 mb-4">If You Have Any Query, Please Contact Us</h1>
                 <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                <form>
+                <form method="post">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control border-0 bg-light" id="name" placeholder="Your Name">
-                                <label for="name">Your Name</label>
+                                <input asp-for="FullName" type="text" class="form-control border-0 bg-light" id="name" placeholder="Your Name">
+                                <label asp-for="FullName">Your Name</label>
+                                <span asp-validation-for="FullName" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control border-0 bg-light" id="email" placeholder="Your Email">
-                                <label for="email">Your Email</label>
+                                <input asp-for="Email" class="form-control border-0 bg-light" id="email" placeholder="Your Email">
+                                <label asp-for="Email">Your Email</label>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input asp-for="Email" class="form-control border-0 bg-light" id="email" placeholder="Your Email">
+                                <label asp-for="Email">Your Email</label>
+                                <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <input type="text" class="form-control border-0 bg-light" id="subject" placeholder="Subject">
-                                <label for="subject">Subject</label>
+                                <input asp-for="Subject" type="text" class="form-control border-0 bg-light" id="subject" placeholder="Subject">
+                                <label asp-for="Subject">Subject</label>
+                                <span asp-validation-for="Subject" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control border-0 bg-light" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                                <label for="message">Message</label>
+                                <textarea asp-for="Message" class="form-control border-0 bg-light" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                <label asp-for="Message">Message</label>
+                                <span asp-validation-for="Message"></span>
                             </div>
                         </div>
                         <div class="col-12">
