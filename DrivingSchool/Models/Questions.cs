@@ -18,5 +18,7 @@ namespace DrivingSchool.Models
         [Required]
         public string? Message { get; set; }
         public DateTime? Created {  get; set; }
+        [Required]
+        public string? PhoneNumber { get; set; }
     }
 }

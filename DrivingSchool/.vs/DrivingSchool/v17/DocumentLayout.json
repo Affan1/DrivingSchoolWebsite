@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|d:\\projects\\drivingschoolwebsite\\drivingschool\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|solutionrelative:views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|d:\\projects\\drivingschoolwebsite\\drivingschool\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|d:\\projects\\drivingschoolwebsite\\drivingschool\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Models\\Questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|d:\\projects\\drivingschoolwebsite\\drivingschool\\models\\testimonial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|solutionrelative:models\\testimonial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|d:\\projects\\drivingschoolwebsite\\drivingschool\\models\\appointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|solutionrelative:models\\appointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|d:\\projects\\drivingschoolwebsite\\drivingschool\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|solutionrelative:views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|d:\\projects\\drivingschoolwebsite\\drivingschool\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Migrations\\20240714204722_Editing_Questions_With_PhoneNumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240714204722_Editing_Questions_With_PhoneNumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|d:\\projects\\drivingschoolwebsite\\drivingschool\\models\\questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|solutionrelative:models\\questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|d:\\projects\\drivingschoolwebsite\\drivingschool\\models\\appointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|solutionrelative:models\\appointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|d:\\projects\\drivingschoolwebsite\\drivingschool\\models\\schooldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +50,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAC0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-15T01:29:52.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Testimonial.cs",
+              "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Models\\Testimonial.cs",
+              "RelativeDocumentMoniker": "Models\\Testimonial.cs",
+              "ToolTip": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Models\\Testimonial.cs",
+              "RelativeToolTip": "Models\\Testimonial.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-15T01:25:34.347Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "20240714204722_Editing_Questions_With_PhoneNumber.cs",
+              "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Migrations\\20240714204722_Editing_Questions_With_PhoneNumber.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240714204722_Editing_Questions_With_PhoneNumber.cs",
+              "ToolTip": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Migrations\\20240714204722_Editing_Questions_With_PhoneNumber.cs",
+              "RelativeToolTip": "Migrations\\20240714204722_Editing_Questions_With_PhoneNumber.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T20:47:22.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "SchoolDbContext.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Models\\SchoolDbContext.cs",
               "RelativeDocumentMoniker": "Models\\SchoolDbContext.cs",
@@ -50,8 +105,7 @@
               "RelativeToolTip": "Models\\SchoolDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-12T22:22:04.112Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-12T22:22:04.112Z"
             },
             {
               "$type": "Document",
@@ -68,7 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Appointments.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Models\\Appointments.cs",
               "RelativeDocumentMoniker": "Models\\Appointments.cs",
@@ -76,18 +130,17 @@
               "RelativeToolTip": "Models\\Appointments.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-12T19:49:51.474Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-12T19:49:51.474Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Questions.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Models\\Questions.cs",
               "RelativeDocumentMoniker": "Models\\Questions.cs",
               "ToolTip": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Models\\Questions.cs",
               "RelativeToolTip": "Models\\Questions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAqAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwBEAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-12T19:49:41.206Z",
               "EditorCaption": ""
@@ -100,27 +153,27 @@
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAOMAAAAAAAAAAAAAANoBAAAtAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAANoBAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-12T19:39:54.662Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Views\\Contact\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Contact\\Index.cshtml",
               "ToolTip": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Views\\Contact\\Index.cshtml",
               "RelativeToolTip": "Views\\Contact\\Index.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAACwAAAAeAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAACYAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-07T02:00:28.834Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "ContactController.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Controllers\\ContactController.cs",
               "RelativeDocumentMoniker": "Controllers\\ContactController.cs",
@@ -128,8 +181,7 @@
               "RelativeToolTip": "Controllers\\ContactController.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAA1wBwAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T01:59:49.251Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T01:59:49.251Z"
             }
           ]
         }
