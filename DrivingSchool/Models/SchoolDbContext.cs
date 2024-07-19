@@ -9,5 +9,6 @@ namespace DrivingSchool.Models
         }
         public DbSet<Appointments> Appointment { get; set; }
         public DbSet<Questions> Questions { get; set; }
+        public DbSet<Testimonial> Testimonial { get; set; }
     }
 }

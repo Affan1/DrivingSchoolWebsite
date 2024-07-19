@@ -10,7 +10,7 @@ namespace DrivingSchool.Models
         [Required]
         public string? StudentName { get; set; }
         [Required]
-        public string? FeedBack {  get; set; }
+        public string? FeedBackMessage {  get; set; }
         [Required]
         public string? ImageUrl { get; set; }
     }

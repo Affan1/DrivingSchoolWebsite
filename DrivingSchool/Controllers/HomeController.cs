@@ -1,6 +1,7 @@
 using DrivingSchool.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace DrivingSchool.Controllers
 {
@@ -22,12 +23,12 @@ namespace DrivingSchool.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(Appointments appointments)
+        public async Task<IActionResult> Index(Appointments appointments)
         {
             if (ModelState.IsValid)
             {
                 _schoolDbContext.Appointment.Add(appointments);
-                _schoolDbContext.SaveChanges();
+               await _schoolDbContext.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             else {

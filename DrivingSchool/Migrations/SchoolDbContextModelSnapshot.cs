@@ -94,6 +94,31 @@ namespace DrivingSchool.Migrations
 
                     b.ToTable("Questions");
                 });
+
+            modelBuilder.Entity("DrivingSchool.Models.Testimonial", b =>
+                {
+                    b.Property<int>("TestimonialId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TestimonialId"));
+
+                    b.Property<string>("FeedBackMessage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TestimonialId");
+
+                    b.ToTable("Testimonial");
+                });
 #pragma warning restore 612, 618
         }
     }
