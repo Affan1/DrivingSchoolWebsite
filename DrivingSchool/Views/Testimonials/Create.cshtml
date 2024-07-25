@@ -5,40 +5,85 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>Testimonial</h4>
+<h1 class="display-4 text-center my-4">Create Your Student's Feedback</h1>
+<h4 class="text-muted text-center mb-5">Share your experience with us!</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="StudentName" class="control-label"></label>
-                <input asp-for="StudentName" class="form-control" />
-                <span asp-validation-for="StudentName" class="text-danger"></span>
+<style>
+    .testimonial-section {
+        background-color: #f8f9fa;
+        padding: 80px 0;
+    }
+
+    .testimonial-title {
+        margin-bottom: 40px;
+    }
+
+    .form-container {
+        background-color: #ffffff;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .form-control {
+        border-radius: 5px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    .form-container form {
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .section-title {
+        text-align: center;
+    }
+</style>
+<div class="container-xxl py-6 testimonial-section">
+    <div class="container">
+        <div class="section-title wow fadeInUp testimonial-title" data-wow-delay="3s">
+            <h6 class="text-primary text-uppercase mb-2">Testimonial</h6>
+            <h1 class="display-6 mb-4">What Our Clients Say!</h1>
+        </div>
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <div class="form-container">
+                <form asp-action="Create" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="StudentName" class="control-label">Name</label>
+                        <input asp-for="StudentName" class="form-control" />
+                        <span asp-validation-for="StudentName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FeedBackMessage" class="control-label">Feedback Message</label>
+                        <textarea asp-for="FeedBackMessage" class="form-control" style="height: 150px"></textarea>
+                        <span asp-validation-for="FeedBackMessage" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="upload" class="control-label">Image Upload</label>
+                        <input id="upload" name="upload" type="file" class="form-control-file" />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Create</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="FeedBackMessage" class="control-label"></label>
-                <input asp-for="FeedBackMessage" class="form-control" />
-                <span asp-validation-for="FeedBackMessage" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImageUrl" class="control-label"></label>
-                <input asp-for="ImageUrl" class="form-control" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-center mt-4">
+    <a asp-action="Logout" asp-controller="Account" class="btn btn-secondary">Back to Testimonials Page</a>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

@@ -13,89 +13,24 @@
             <h6 class="text-primary text-uppercase mb-2">Testimonial</h6>
             <h1 class="display-6 mb-4">What Our Clients Say!</h1>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="owl-carousel testimonial-carousel">
-                    <div class="testimonial-item text-center">
-                        <div class="position-relative mb-5">
-                            <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-1.jpg" alt="">
-                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 60px; height: 60px;">
-                                <i class="fa fa-quote-left fa-2x text-primary"></i>
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="row">
+                    @foreach (var student in Model)
+                    {
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img class="card-img-top" src="@student.ImageUrl" alt="@student.StudentName" />
+                                <div class="card-body">
+                                    <h5 class="card-title">@student.StudentName</h5>
+                                    <p class="card-text">@student.FeedBackMessage</p>
+                                </div>
                             </div>
                         </div>
-                        <p class="fs-4">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                        <hr class="w-25 mx-auto">
-                        <h5>Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                    <div class="testimonial-item text-center">
-                        <div class="position-relative mb-5">
-                            <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-2.jpg" alt="">
-                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 60px; height: 60px;">
-                                <i class="fa fa-quote-left fa-2x text-primary"></i>
-                            </div>
-                        </div>
-                        <p class="fs-4">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                        <hr class="w-25 mx-auto">
-                        <h5>Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                    <div class="testimonial-item text-center">
-                        <div class="position-relative mb-5">
-                            <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-3.jpg" alt="">
-                            <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 60px; height: 60px;">
-                                <i class="fa fa-quote-left fa-2x text-primary"></i>
-                            </div>
-                        </div>
-                        <p class="fs-4">Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.</p>
-                        <hr class="w-25 mx-auto">
-                        <h5>Client Name</h5>
-                        <span>Profession</span>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Testimonial End -->
-
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.StudentName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FeedBackMessage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.StudentName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FeedBackMessage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.TestimonialId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TestimonialId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TestimonialId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>

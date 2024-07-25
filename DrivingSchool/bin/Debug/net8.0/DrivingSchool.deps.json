@@ -9,6 +9,7 @@
       "DrivingSchool/1.0.0": {
         "dependencies": {
           "Azure.Identity": "1.12.0",
+          "Azure.Storage.Blobs": "12.21.0",
           "Microsoft.EntityFrameworkCore": "8.0.7",
           "Microsoft.EntityFrameworkCore.Design": "8.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.7",
@@ -19,7 +20,7 @@
           "DrivingSchool.dll": {}
         }
       },
-      "Azure.Core/1.40.0": {
+      "Azure.Core/1.41.0": {
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "7.0.0",
           "System.ClientModel": "1.0.0",
@@ -32,14 +33,14 @@
         },
         "runtime": {
           "lib/net6.0/Azure.Core.dll": {
-            "assemblyVersion": "1.40.0.0",
-            "fileVersion": "1.4000.24.30605"
+            "assemblyVersion": "1.41.0.0",
+            "fileVersion": "1.4100.24.36109"
           }
         }
       },
       "Azure.Identity/1.12.0": {
         "dependencies": {
-          "Azure.Core": "1.40.0",
+          "Azure.Core": "1.41.0",
           "Microsoft.Identity.Client": "4.61.3",
           "Microsoft.Identity.Client.Extensions.Msal": "4.61.3",
           "System.Memory": "4.5.4",
@@ -51,6 +52,30 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.12.0.0",
             "fileVersion": "1.1200.24.31701"
+          }
+        }
+      },
+      "Azure.Storage.Blobs/12.21.0": {
+        "dependencies": {
+          "Azure.Storage.Common": "12.20.0",
+          "System.Text.Json": "8.0.4"
+        },
+        "runtime": {
+          "lib/net6.0/Azure.Storage.Blobs.dll": {
+            "assemblyVersion": "12.21.0.0",
+            "fileVersion": "12.2100.24.36603"
+          }
+        }
+      },
+      "Azure.Storage.Common/12.20.0": {
+        "dependencies": {
+          "Azure.Core": "1.41.0",
+          "System.IO.Hashing": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Azure.Storage.Common.dll": {
+            "assemblyVersion": "12.20.0.0",
+            "fileVersion": "12.2000.24.36603"
           }
         }
       },
@@ -1734,6 +1759,14 @@
           }
         }
       },
+      "System.IO.Hashing/6.0.0": {
+        "runtime": {
+          "lib/net6.0/System.IO.Hashing.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
       "System.IO.Pipelines/7.0.0": {},
       "System.Memory/4.5.4": {},
       "System.Memory.Data/1.0.2": {
@@ -1878,12 +1911,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Azure.Core/1.40.0": {
+    "Azure.Core/1.41.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eOx6wk3kQ3SCnoAj7IytAu/d99l07PdarmUc+RmMkVOTkcQ3s+UQEaGzMyEqC2Ua4SKnOW4Xw/klLeB5V2PiSA==",
-      "path": "azure.core/1.40.0",
-      "hashPath": "azure.core.1.40.0.nupkg.sha512"
+      "sha512": "sha512-7OO8rPCVSvXj2IQET3NkRf8hU2ZDCCvCIUhlrE089qkLNpNfWufJnBwHRKLAOWF3bhKBGJS/9hPBgjJ8kupUIg==",
+      "path": "azure.core/1.41.0",
+      "hashPath": "azure.core.1.41.0.nupkg.sha512"
     },
     "Azure.Identity/1.12.0": {
       "type": "package",
@@ -1891,6 +1924,20 @@
       "sha512": "sha512-OBIM3aPz8n9oEO5fdnee+Vsc5Nl4W3FeslPpESyDiyByntQI5BAa76KD60eFXm9ulevnwxGZP9YXL8Y+paI5Uw==",
       "path": "azure.identity/1.12.0",
       "hashPath": "azure.identity.1.12.0.nupkg.sha512"
+    },
+    "Azure.Storage.Blobs/12.21.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W1aSEH11crU3CscfuICUPXScTO9nKwSof3YFsdxmbdi+P+JARYzntkGJuZ685gvmyUse7isBNncNlVEjB5LT0g==",
+      "path": "azure.storage.blobs/12.21.0",
+      "hashPath": "azure.storage.blobs.12.21.0.nupkg.sha512"
+    },
+    "Azure.Storage.Common/12.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-C0uTY4E1NSGiNf/dlLMQ/d85a2CDazEg4YYtNJOYnLSb8ZXJ5RBPHYGW7a46kN5Xn5Bc9BKMvs8fME285TfEpw==",
+      "path": "azure.storage.common/12.20.0",
+      "hashPath": "azure.storage.common.12.20.0.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",
@@ -2829,6 +2876,13 @@
       "sha512": "sha512-yxGIQd3BFK7F6S62/7RdZk3C/mfwyVxvh6ngd1VYMBmbJ1YZZA9+Ku6suylVtso0FjI0wbElpJ0d27CdsyLpBQ==",
       "path": "system.identitymodel.tokens.jwt/6.35.0",
       "hashPath": "system.identitymodel.tokens.jwt.6.35.0.nupkg.sha512"
+    },
+    "System.IO.Hashing/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rfm2jYCaUeGysFEZjDe7j1R4x6Z6BzumS/vUT5a1AA/AWJuGX71PoGB0RmpyX3VmrGqVnAwtfMn39OHR8Y/5+g==",
+      "path": "system.io.hashing/6.0.0",
+      "hashPath": "system.io.hashing.6.0.0.nupkg.sha512"
     },
     "System.IO.Pipelines/7.0.0": {
       "type": "package",

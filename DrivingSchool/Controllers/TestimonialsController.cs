@@ -6,16 +6,20 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DrivingSchool.Models;
+using Azure.Storage.Blobs;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DrivingSchool.Controllers
 {
     public class TestimonialsController : Controller
     {
         private readonly SchoolDbContext _context;
+        private readonly IConfiguration _configuration;
 
-        public TestimonialsController(SchoolDbContext context)
+        public TestimonialsController(SchoolDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
         // GET: Testimonials
@@ -43,8 +47,9 @@ namespace DrivingSchool.Controllers
         }
 
         // GET: Testimonials/Create
+        [Authorize]
         public IActionResult Create()
-        {
+        { 
             return View();
         }
 
@@ -52,14 +57,45 @@ namespace DrivingSchool.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TestimonialId,StudentName,FeedBackMessage,ImageUrl")] Testimonial testimonial)
+        public async Task<IActionResult> Create([Bind("TestimonialId,StudentName,FeedBackMessage,ImageUrl")] Testimonial testimonial, IFormFile upload)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(testimonial);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (upload != null && upload.Length > 0)
+                {
+                    string connectionString = _configuration.GetConnectionString("AzureBlobStorage") ?? "Not Blob Storage connection found";
+                    string containerName = "drivingschoolstorage";
+
+                    BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
+                    BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
+
+                    // Create a unique blob name
+                    string blobName = $"{Guid.NewGuid()}{Path.GetExtension(upload.FileName)}";
+                    BlobClient blobClient = containerClient.GetBlobClient(blobName);
+
+                    using (var stream = upload.OpenReadStream())
+                    {
+                        await blobClient.UploadAsync(stream, true);
+                    }
+
+                    // Get the URI of the uploaded blob
+                    string blobUri = blobClient.Uri.ToString();
+
+                    testimonial.ImageUrl = blobUri;
+                    _context.Add(testimonial);
+                    await _context.SaveChangesAsync();
+
+                    ViewBag.Message = "File uploaded successfully!";
+                    ViewBag.BlobUri = blobUri; // Pass the blob URL to the view
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    ViewBag.Message = "Please select a file to upload.";
+                    ViewBag.BlobUri = null;
+                }
             }
             return View(testimonial);
         }
