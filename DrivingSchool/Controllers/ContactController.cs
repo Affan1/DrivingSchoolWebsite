@@ -11,7 +11,7 @@ namespace DrivingSchool.Controllers
         private readonly SchoolDbContext _context;
         private readonly IEmailService _emailService;
 
-        public ContactController(SchoolDbContext dbContext, EmailService emailService)
+        public ContactController(SchoolDbContext dbContext, IEmailService emailService)
         {
             _context = dbContext;
             _emailService = emailService;
