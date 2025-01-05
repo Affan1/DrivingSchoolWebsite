@@ -255,3 +255,7 @@ D:\Projects\DrivingSchoolWebsite\DrivingSchool\bin\Debug\net8.0\runtimes\win\lib
 D:\Projects\DrivingSchoolWebsite\DrivingSchool\bin\Debug\net8.0\Azure.Storage.Blobs.dll
 D:\Projects\DrivingSchoolWebsite\DrivingSchool\bin\Debug\net8.0\Azure.Storage.Common.dll
 D:\Projects\DrivingSchoolWebsite\DrivingSchool\bin\Debug\net8.0\System.IO.Hashing.dll
+D:\Projects\DrivingSchoolWebsite\DrivingSchool\bin\Debug\net8.0\DrivingSchool.staticwebassets.endpoints.json
+D:\Projects\DrivingSchoolWebsite\DrivingSchool\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Projects\DrivingSchoolWebsite\DrivingSchool\obj\Debug\net8.0\staticwebassets\msbuild.DrivingSchool.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Projects\DrivingSchoolWebsite\DrivingSchool\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

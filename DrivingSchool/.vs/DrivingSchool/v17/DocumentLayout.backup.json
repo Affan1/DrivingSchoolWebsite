@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Migrations\\20250105161835_Intial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250105161835_Intial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|d:\\projects\\drivingschoolwebsite\\drivingschool\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{9CCCD14D-EC6F-4F3D-8178-4191D0D3B88C}|DrivingSchool.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -82,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 297,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,20 +98,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20250105161835_Intial.cs",
-              "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Migrations\\20250105161835_Intial.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250105161835_Intial.cs",
-              "ToolTip": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Migrations\\20250105161835_Intial.cs",
-              "RelativeToolTip": "Migrations\\20250105161835_Intial.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T16:18:36.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -128,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "EmailService.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Services\\EmailService.cs",
               "RelativeDocumentMoniker": "Services\\EmailService.cs",
@@ -141,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -154,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "SchoolDbContext.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Models\\SchoolDbContext.cs",
               "RelativeDocumentMoniker": "Models\\SchoolDbContext.cs",
@@ -167,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Views\\Courses\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Courses\\Index.cshtml",
@@ -180,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "CoursesController.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Controllers\\CoursesController.cs",
               "RelativeDocumentMoniker": "Controllers\\CoursesController.cs",
@@ -193,7 +176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "TestimonialsController.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Controllers\\TestimonialsController.cs",
               "RelativeDocumentMoniker": "Controllers\\TestimonialsController.cs",
@@ -206,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -219,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "IEmailService.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Services\\IEmailService.cs",
               "RelativeDocumentMoniker": "Services\\IEmailService.cs",
@@ -232,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "EmailSettings.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Models\\EmailSettings.cs",
               "RelativeDocumentMoniker": "Models\\EmailSettings.cs",
@@ -245,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "EmailModel.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Models\\EmailModel.cs",
               "RelativeDocumentMoniker": "Models\\EmailModel.cs",
@@ -258,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "Appointments.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Models\\Appointments.cs",
               "RelativeDocumentMoniker": "Models\\Appointments.cs",
@@ -271,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -284,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Views\\About\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\About\\Index.cshtml",
@@ -297,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "AboutController.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Controllers\\AboutController.cs",
               "RelativeDocumentMoniker": "Controllers\\AboutController.cs",
@@ -310,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -323,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",

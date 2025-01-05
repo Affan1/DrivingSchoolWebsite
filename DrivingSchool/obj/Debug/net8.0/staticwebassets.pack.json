@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\DrivingSchool.bundle.scp.css",
-      "PackagePath": "staticwebassets\\DrivingSchool.bundle.scp.css"
+      "PackagePath": "staticwebassets\\DrivingSchool.l7jpnthm1y.bundle.scp.css"
     },
     {
       "Id": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\wwwroot\\css\\bootstrap.min.css",
@@ -715,6 +715,10 @@
     {
       "Id": "D:\\Projects\\DrivingSchoolWebsite\\DrivingSchool\\wwwroot\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DrivingSchool.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DrivingSchool.Microsoft.AspNetCore.StaticWebAssets.props",
