@@ -13,25 +13,26 @@ env:
 jobs:
   publish:
     runs-on: windows-latest
-    
+
     steps:
-      - uses: actions/checkout@v3
-      
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.0.x'
-          
+
       - name: Restore
         run: dotnet restore ./DrivingSchool/DrivingSchool.sln
-        
+
       - name: Build
         run: dotnet build ./DrivingSchool/DrivingSchool.sln --configuration Release --no-restore
-        
+
       - name: Publish
         run: dotnet publish ./DrivingSchool/DrivingSchool.sln --configuration Release --no-build --output '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'
-        
-      - name: Deployment
+
+      - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
