@@ -1,33 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Azure.Storage.Blobs;
+using DrivingSchool.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using DrivingSchool.Models;
-using Azure.Storage.Blobs;
-using Microsoft.AspNetCore.Authorization;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DrivingSchool.Controllers
 {
     public class TestimonialsController : Controller
     {
         private readonly SchoolDbContext _context;
-        private readonly IConfiguration _configuration;
+        private readonly IWebHostEnvironment _environment;
 
-        public TestimonialsController(SchoolDbContext context, IConfiguration configuration)
+        public TestimonialsController(SchoolDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
-            _configuration = configuration;
+            _environment = webHostEnvironment;
         }
-
         // GET: Testimonials
         public async Task<IActionResult> Index()
         {
             return View(await _context.Testimonial.ToListAsync());
         }
-
+        [Authorize]
+        public async Task<IActionResult> Dashboard()
+        {
+            return View(await _context.Testimonial.ToListAsync());
+        }
         // GET: Testimonials/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -50,7 +54,7 @@ namespace DrivingSchool.Controllers
         [Authorize]
         public IActionResult Create()
         { 
-            return View();
+             return View();
         }
 
         // POST: Testimonials/Create
@@ -59,48 +63,53 @@ namespace DrivingSchool.Controllers
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TestimonialId,StudentName,FeedBackMessage,ImageUrl")] Testimonial testimonial, IFormFile upload)
+        public async Task<IActionResult> Create(Testimonial testimonial, IFormFile upload)
         {
+            if (upload == null || upload.Length == 0)
+            {
+                ModelState.AddModelError("upload", "Image is required.");
+            }
+
             if (ModelState.IsValid)
             {
                 if (upload != null && upload.Length > 0)
                 {
-                    string connectionString = _configuration.GetConnectionString("AzureBlobStorage") ?? "Not Blob Storage connection found";
-                    string containerName = "drivingschoolstorage";
+                    // Folder path: wwwroot/uploads/testimonials
+                    string uploadsFolder = Path.Combine(
+                        _environment.WebRootPath,
+                        "uploads",
+                        "testimonials");
 
-                    BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
-                    BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
-
-                    // Create a unique blob name
-                    string blobName = $"{Guid.NewGuid()}{Path.GetExtension(upload.FileName)}";
-                    BlobClient blobClient = containerClient.GetBlobClient(blobName);
-
-                    using (var stream = upload.OpenReadStream())
+                    // Create directory if it doesn't exist
+                    if (!Directory.Exists(uploadsFolder))
                     {
-                        await blobClient.UploadAsync(stream, true);
+                        Directory.CreateDirectory(uploadsFolder);
                     }
 
-                    // Get the URI of the uploaded blob
-                    string blobUri = blobClient.Uri.ToString();
+                    // Unique file name
+                    string fileName = Guid.NewGuid() + Path.GetExtension(upload.FileName);
+                    string filePath = Path.Combine(uploadsFolder, fileName);
 
-                    testimonial.ImageUrl = blobUri;
-                    _context.Add(testimonial);
-                    await _context.SaveChangesAsync();
+                    // Save file locally
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await upload.CopyToAsync(fileStream);
+                    }
 
-                    ViewBag.Message = "File uploaded successfully!";
-                    ViewBag.BlobUri = blobUri; // Pass the blob URL to the view
-                    return RedirectToAction(nameof(Index));
+                    // Save relative path in DB
+                    testimonial.ImageUrl = "/uploads/testimonials/" + fileName;
                 }
-                else
-                {
-                    ViewBag.Message = "Please select a file to upload.";
-                    ViewBag.BlobUri = null;
-                }
+
+                _context.Add(testimonial);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
+
             return View(testimonial);
         }
 
         // GET: Testimonials/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -120,8 +129,9 @@ namespace DrivingSchool.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TestimonialId,StudentName,FeedBackMessage,ImageUrl")] Testimonial testimonial)
+        public async Task<IActionResult> Edit(int id, Testimonial testimonial)
         {
             if (id != testimonial.TestimonialId)
             {
@@ -132,26 +142,48 @@ namespace DrivingSchool.Controllers
             {
                 try
                 {
+                    // If new image uploaded
+                    if (testimonial.ImageFile != null)
+                    {
+                        string uploadsFolder = Path.Combine(
+                            _environment.WebRootPath, "uploads");
+
+                        Directory.CreateDirectory(uploadsFolder);
+
+                        string uniqueFileName =
+                            Guid.NewGuid() + Path.GetExtension(testimonial.ImageFile.FileName);
+
+                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await testimonial.ImageFile.CopyToAsync(stream);
+                        }
+
+                        // Save new image path
+                        testimonial.ImageUrl = "/uploads/" + uniqueFileName;
+                    }
+                    // else → keep existing ImageUrl automatically
+
                     _context.Update(testimonial);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!TestimonialExists(testimonial.TestimonialId))
-                    {
                         return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+
+                    throw;
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(testimonial);
         }
 
         // GET: Testimonials/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -170,6 +202,7 @@ namespace DrivingSchool.Controllers
         }
 
         // POST: Testimonials/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -177,6 +210,17 @@ namespace DrivingSchool.Controllers
             var testimonial = await _context.Testimonial.FindAsync(id);
             if (testimonial != null)
             {
+                if (!string.IsNullOrEmpty(testimonial.ImageUrl))
+                {
+                    string imagePath = Path.Combine(
+                        _environment.WebRootPath,
+                        testimonial.ImageUrl.TrimStart('/'));
+
+                    if (System.IO.File.Exists(imagePath))
+                    {
+                        System.IO.File.Delete(imagePath);
+                    }
+                }
                 _context.Testimonial.Remove(testimonial);
             }
 

@@ -1,0 +1,20 @@
+
+{
+    "region" : "eu-west-2",
+    "configuration" : "Debug",
+    "framework"     : "net8.0",
+    "self-contained" : true,
+    "application"    : "DrivingSchool",
+    "environment"    : "DrivingSchool-dev",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-05d4f3af82b636081\";\"aws:ec2:vpc,Subnets\"=\"subnet-005e74d2493b62c1d\"",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.8.6 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "drivingschool-dev",
+    "instance-type"        : "t3a.medium",
+    "key-pair"             : "school",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "nginx"
+}

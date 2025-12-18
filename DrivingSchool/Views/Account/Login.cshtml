@@ -1,4 +1,4 @@
-﻿@model YourNamespace.ViewModels.LoginViewModel
+﻿@model DrivingSchool.ViewModels.LoginViewModel
 
 <div class="container">
     <div class="row justify-content-center">
@@ -9,6 +9,7 @@
                 </div>
                 <div class="card-body">
                     <form asp-action="Login" method="post">
+                        <div asp-validation-summary="All" class="text-danger"></div>
                         <div class="form-group">
                             <label asp-for="Username" class="control-label"></label>
                             <input asp-for="Username" class="form-control" />

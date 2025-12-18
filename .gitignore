@@ -162,3 +162,7 @@ cython_debug/
 #.idea/
 appsettings.json
 FileContentIndex
+
+.vs/
+obj/
+bin/

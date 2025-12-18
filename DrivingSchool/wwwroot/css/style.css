@@ -349,3 +349,6 @@
 .copyright a:hover {
     color: var(--light);
 }
+.logo {
+    max-height: 60px;
+}

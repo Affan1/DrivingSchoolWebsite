@@ -59,8 +59,8 @@
         </div>
         <div class="wow fadeInUp" data-wow-delay="0.1s">
             <div class="form-container">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <form asp-action="Create" method="post" enctype="multipart/form-data">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="StudentName" class="control-label">Name</label>
                         <input asp-for="StudentName" class="form-control" />
@@ -72,8 +72,9 @@
                         <span asp-validation-for="FeedBackMessage" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="upload" class="control-label">Image Upload</label>
-                        <input id="upload" name="upload" type="file" class="form-control-file" />
+                        <label>Image Upload</label>
+                        <input type="file" name="upload" class="form-control-file" required />
+                        <span asp-validation-for="ImageFile" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-block">Create</button>
@@ -84,6 +85,8 @@
     </div>
 </div>
 
+
+
 <div class="text-center mt-4">
-    <a asp-action="Logout" asp-controller="Account" class="btn btn-secondary">Back to Testimonials Page</a>
+    <a asp-action="Dashboard" asp-controller="Testimonials" class="btn btn-secondary">Back to Testimonials Page</a>
 </div>

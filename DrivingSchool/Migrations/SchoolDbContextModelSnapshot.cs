@@ -30,10 +30,14 @@ namespace DrivingSchool.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AppointmentID"));
 
-                    b.Property<string>("CarType")
+                    b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("DateTime")
+                    b.Property<bool>("Agreement")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("Datetime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
@@ -53,6 +57,9 @@ namespace DrivingSchool.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("AppointmentID");
 
                     b.ToTable("Appointment");
@@ -66,7 +73,7 @@ namespace DrivingSchool.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("QuestionId"));
 
-                    b.Property<DateTime?>("Created")
+                    b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")

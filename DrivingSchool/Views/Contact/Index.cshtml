@@ -1,25 +1,62 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@model Questions
+﻿@model Appointments
 <!-- Contact Start -->
 <div class="container-xxl py-6">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 450px;">
-                <div class="position-relative h-100">
-                    <iframe class="position-relative w-100 h-100"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2431.3845273756747!2d-1.8229228230554626!3d52.45406314110894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870ba49de21e0e5%3A0x652fa175337e7147!2s54%20Wynford%20Rd%2C%20Birmingham%20B27%206JJ!5e0!3m2!1sen!2suk!4v1722728372574!5m2!1sen!2suk"
-                            frameborder="0" style="min-height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="bg-light rounded p-5 h-100 d-flex flex-column justify-content-center">
+
+                    <h3 class="mb-4 text-primary">Contact Information</h3>
+
+                    <p class="mb-3">
+                        <i class="bi bi-clock-fill text-primary me-2"></i>
+                        <strong>Opening Hours</strong>
+                    </p>
+
+                    <p class="mb-2">
+                        <strong>Monday – Friday:</strong><br>
+                        08:50 – 15:00 &amp; 18:00 – 20:00
+                    </p>
+
+                    <p class="mb-2">
+                        <strong>Saturday:</strong><br>
+                        09:00 – 15:00 <span class="text-muted">(Limited availability)</span>
+                    </p>
+
+                    <p class="mb-4">
+                        <strong>Sunday:</strong><br>
+                        Closed
+                    </p>
+
+                    <hr>
+
+                    <p class="mb-3">
+                        <i class="bi bi-envelope-fill text-primary me-2"></i>
+                        <strong>Email</strong>
+                    </p>
+                    <p class="mb-0">
+                        <a href="usman-majeed@drivetimelearning.co.uk" class="text-dark">
+                            usman-majeed@drivetimelearning.co.uk
+                        </a>
+                    </p>
+
                 </div>
             </div>
+
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                 <h6 class="text-primary text-uppercase mb-2">Contact Us</h6>
                 <h1 class="display-6 mb-4">If You Have Any Query, Please Contact Us</h1>
-                <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                <p class="mb-4">Please complete the form below and one of our team members will get back to you as soon as possible.<br />
+
+Your information will be used only to respond to your enquiry and to provide you with the best possible service. We respect your privacy and will never share your details with third parties.</p>
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                        <strong>Success!</strong> @TempData["SuccessMessage"]
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                }
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <form method="post">
                     <div class="row g-3">
                         <div class="col-md-6">
@@ -38,23 +75,40 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input asp-for="PhoneNumber" class="form-control border-0 bg-light" id="email" placeholder="Your Email">
+                                <input asp-for="PhoneNumber" class="form-control border-0 bg-light" id="Phone Number" placeholder="Your phone number">
                                 <label asp-for="PhoneNumber">Phone Number</label>
                                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <input asp-for="Subject" type="text" class="form-control border-0 bg-light" id="subject" placeholder="Subject">
-                                <label asp-for="Subject">Subject</label>
-                                <span asp-validation-for="Subject" class="text-danger"></span>
+                                <input asp-for="Address" type="text" class="form-control border-0 bg-light" id="subject" placeholder="Address">
+                                <label asp-for="Address">Full Address</label>
+                                <span asp-validation-for="Address" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea asp-for="Message" class="form-control border-0 bg-light" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                                <label asp-for="Message">Message</label>
-                                <span asp-validation-for="Message"></span>
+                                <input asp-for="PostalCode" class="form-control border-0 bg-light" placeholder="postal code" id="message">
+                                <label asp-for="PostalCode">Postal Code</label>
+                                <span asp-validation-for="PostalCode"></span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea asp-for="Description" class="form-control border-0 bg-light" placeholder="Please tell us your availibility." id="message" style="height: 150px"></textarea>
+                                <label asp-for="Description">Please tell us your availibility.</label>
+                                <span asp-validation-for="Description"></span>
+                            </div>
+                        </div>
+                        <!-- Learners Notice -->
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="hasAgreed" required>
+                                <label class="form-check-label" for="hasAgreed">
+                                    I have read and agree to the
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#learnersNoticeModal" class="text-primary">Learners Notice</a>.
+                                </label>
                             </div>
                         </div>
                         <div class="col-12">
@@ -66,4 +120,91 @@
         </div>
     </div>
 </div>
+<!-- Learners Notice Modal -->
+<div class="modal fade" id="learnersNoticeModal" tabindex="-1" aria-labelledby="learnersNoticeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="learnersNoticeModalLabel">Learners Notice</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5><strong>Provisional Licence</strong></h5>
+                <p>Please bring your provisional licence with you on your first lesson.</p>
+
+                <h5><strong>Lesson Time</strong></h5>
+                <p>All lessons are of full 1-hour or 2-hour duration. Instructors may occasionally be late due to traffic or other reasons, but will provide the lesson for the full duration starting from their arrival. Learners are expected to be ready 5–10 minutes early as instructors may sometimes arrive ahead of schedule.</p>
+
+                <h5><strong>Cancelling or Changing a Lesson</strong></h5>
+                <p>To cancel or reschedule a lesson, learners must inform the instructor at least 24 hours in advance for a 1-hour lesson, and 48 hours for a 2-hour lesson. Failure to provide proper notice will result in a charge for the full lesson duration.</p>
+
+                <h5><strong>Lesson Day Non-Attendance</strong></h5>
+                <p>If a learner does not attend a scheduled lesson, they will still be charged in full. Instructors will wait 10–15 minutes at the pickup point, after which the lesson will be deemed cancelled.</p>
+
+                <h5><strong>Instructor Cancellations</strong></h5>
+                <p>Instructors reserve the right to cancel lessons due to illness, vehicle breakdown, extreme weather, or other unforeseen circumstances. Such cancellations will not be charged to the learner.</p>
+
+                <h5><strong>Payment</strong></h5>
+                <p>Payment must be made for each lesson. Further payment details will be provided by the instructor before your first booking.</p>
+
+                <h5><strong>Test Day Charges</strong></h5>
+                <p>The current test day charge is £120.00 (subject to change). This covers a 1-hour lesson before the test and car hire for the test.</p>
+
+                <h5><strong>Fitness to Drive</strong></h5>
+                <p>Learners must not be under the influence of alcohol or drugs. Instructors can terminate a lesson immediately if impairment is suspected.</p>
+
+                <h5><strong>Medical Conditions</strong></h5>
+                <p>Learners must disclose any medical conditions or medications that may affect their ability to drive safely.</p>
+
+                <h5><strong>Eyesight</strong></h5>
+                <p>Learners must be able to read a standard number plate from 20–20.5 metres.</p>
+
+                <h5><strong>Vehicle Use</strong></h5>
+                <p>The instructor has the final decision on whether their car can be used for a test based on the learner's readiness.</p>
+
+                <h5><strong>Test Cancellation by DVSA</strong></h5>
+                <p>If the DVSA cancels a test, the instructor is generally not liable for lost fees but may assist in claiming compensation from the DVSA.</p>
+
+                <h5><strong>Booking Responsibility</strong></h5>
+                <p>Learners are responsible for checking test details and informing the instructor once the test is booked.</p>
+
+                <h5><strong>Vehicle Standards</strong></h5>
+                <p>Instructors provide a dual-controlled, roadworthy, taxed, and insured vehicle.</p>
+
+                <h5><strong>Professional Conduct</strong></h5>
+                <p>Instructors adhere to the DVSA Code of Practice, ensuring courteous and professional behavior.</p>
+
+                <h5><strong>Fines and Penalties</strong></h5>
+                <p>Learners are responsible for any fines or penalties incurred during the lesson.</p>
+
+                <h5><strong>Liability</strong></h5>
+                <p>Neither the driving school nor the instructor is liable for accidents caused by learner negligence or recklessness.</p>
+
+                <h5><strong>Complaints</strong></h5>
+                <p>Any issues should be raised directly with the instructor or the driving school.</p>
+
+                <p><strong>Thank you for your attention!</strong></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Learners Notice Modal
+
+    document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+        const checkbox = document.getElementById('hasAgreed');
+        const validationMessage = document.getElementById('formValidationMessage');
+
+        if (!checkbox.checked) {
+            event.preventDefault();
+            validationMessage.textContent = "You must agree to the Learners Notice before submitting the form.";
+        } else {
+            validationMessage.textContent = "";
+        }
+    });
+</script>
+<!-- End of Learners Notice Modal -->
 <!-- Contact End -->

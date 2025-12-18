@@ -1,15 +1,57 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using DrivingSchool.Models;
+using DrivingSchool.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using YourNamespace.ViewModels;
 
-namespace YourNamespace.Controllers
+namespace DrivingSchool.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly UserManager<Users> _userManager;
+        private readonly SignInManager<Users> _signInManager;
+
+        public AccountController(
+            UserManager<Users> userManager,
+            SignInManager<Users> signInManager)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+        }
+
+        // REGISTER
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var user = new Users
+            {
+                UserName = model.Username,
+                Email = model.Email,
+            };
+
+            var result = await _userManager.CreateAsync(user, model.Password);
+
+            if (result.Succeeded)
+            {
+                await _signInManager.SignInAsync(user, isPersistent: false);
+                return RedirectToAction("Dashboard", "Testimonials");
+            }
+
+            foreach (var error in result.Errors)
+                ModelState.AddModelError("", error.Description);
+
+            return View(model);
+        }
+
+        // LOGIN
         [HttpGet]
         public IActionResult Login()
         {
@@ -19,33 +61,27 @@ namespace YourNamespace.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            if (ModelState.IsValid)
-            {
-                // Validate the user credentials (this is just an example)
-                if (model.Username == "test" && model.Password == "password")
-                {
-                    var claims = new List<Claim>
-                    {
-                        new Claim(ClaimTypes.Name, model.Username)
-                    };
+            if (!ModelState.IsValid)
+                return View(model);
 
-                    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var result = await _signInManager.PasswordSignInAsync(
+                model.Username,
+                model.Password,
+                model.RememberMe,
+                lockoutOnFailure: false);
 
-                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+            if (result.Succeeded)
+                return RedirectToAction("Dashboard", "Testimonials");
 
-                    return RedirectToAction("Create", "Testimonials");
-                }
-
-                ModelState.AddModelError("", "Invalid username or password");
-            }
-
+            ModelState.AddModelError("", "Invalid login attempt");
             return View(model);
         }
 
+        // LOGOUT
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Login", "Account");
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login");
         }
     }
 }
